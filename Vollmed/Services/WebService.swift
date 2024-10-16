@@ -5,11 +5,45 @@
 //  Created by Giovanna Moeller on 12/09/23.
 //
 
-import Foundation
+import UIKit
 
 struct WebService {
     
     private let baseURL = "http://localhost:3000"
+    let imageCache = NSCache<NSString, UIImage>()
+    
+    func downloadImage(from imageURL: String) async throws -> UIImage? {
+        guard let url = URL(string: imageURL) else {
+            print("Erro na URL!")
+            return nil
+        }
+
+        // Verificar cache
+        if let cachedImage = imageCache.object(forKey: imageURL as NSString) {
+            return cachedImage
+        }
+
+        let (data, _) = try await URLSession.shared.data(from: url)
+        guard let image = UIImage(data: data) else {
+            return nil
+        }
+
+        // Salvar imagem no cache
+        imageCache.setObject(image, forKey: imageURL as NSString)
+
+        return image
+    }
+    
+    //    func downloadImage(from imageURL: String) async throws -> UIImage? {
+//        guard let url = URL(string: imageURL) else {
+//            print("Erro na URL!")
+//            return nil
+//        }
+//        
+//        let (data, _) = try await URLSession.shared.data(from: url)
+//        
+//        return UIImage(data: data)
+//    }
     
     func getAllSpecialists() async throws -> [Specialist]? {
         let endpoint = baseURL + "/especialista"
