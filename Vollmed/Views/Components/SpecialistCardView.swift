@@ -10,6 +10,7 @@ import SwiftUI
 struct SpecialistCardView: View {
     
     var specialist: Specialist
+    var appointment: Appointment?
     
     let service = WebService()
     
@@ -20,7 +21,7 @@ struct SpecialistCardView: View {
             if let image = try await service.downloadImage(from: specialist.imageUrl) {
                 self.specialistImage = image
             }
-        }catch {
+        } catch {
             print("Ocorreu um erro ao obter a imagem: \(error)")
         }
     }
@@ -34,7 +35,7 @@ struct SpecialistCardView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 64, height: 64)
-                    .clipShape(Circle())
+                        .clipShape(Circle())
                 }
                 
                 VStack(alignment: .leading, spacing: 8.0) {
@@ -42,21 +43,40 @@ struct SpecialistCardView: View {
                         .font(.title3)
                         .bold()
                     Text(specialist.specialty)
+                    if let appointment {
+                        Text(appointment.date.convertDateStringToReadableDate())
+                            .bold()
+                    }
                 }
             }
-            NavigationLink {
-                ScheduleAppointmentView()
-            } label: {
-                ButtonView(text: "Agendar consulta")
-            }
-
             
+            if let appointment {
+                HStack {
+                    NavigationLink {
+                        ScheduleAppointmentView(specialistID: appointment.specialist.id, isRescheduleView: true, appointmentID: appointment.id)
+                    } label: {
+                        ButtonView(text: "Remarcar")
+                    }
+                    
+                    NavigationLink {
+                        CancelAppointmentView(appointmentID: appointment.id)
+                    } label: {
+                        ButtonView(text: "Cancelar", buttonType: .cancel)
+                    }
+                }
+            } else {
+                NavigationLink {
+                    ScheduleAppointmentView(specialistID: specialist.id)
+                } label: {
+                    ButtonView(text: "Agendar consulta")
+                }
+            }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
         .background(Color(.lightBlue).opacity(0.15))
         .cornerRadius(16.0)
-        .onAppear{
+        .onAppear {
             Task {
                 await downloadImage()
             }

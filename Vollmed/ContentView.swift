@@ -8,14 +8,38 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var authManager = AuthenticationManager.shared
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        if authManager.token == nil {
+            NavigationStack {
+                SignInView()
+            }
+        } else {
+            TabView {
+                NavigationStack {
+                    HomeView()
+                }
+                .tabItem {
+                    Label(
+                        title: { Text("Home") },
+                        icon: { Image(systemName: "house") }
+                    )
+                }
+                
+                NavigationStack {
+                    MyAppointmentsView()
+                }
+                .tabItem {
+                    Label(
+                        title: { Text("Minhas consultas") },
+                        icon: { Image(systemName: "calendar") }
+                    )
+                }
+            }
         }
-        .padding()
     }
 }
 
