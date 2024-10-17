@@ -12,6 +12,7 @@ struct HomeViewModel {
     // MARK: - Attributes
     
     let service = WebService()
+    var authManager = AuthenticationManager.shared
     
     //MARK: -Class methods
     
@@ -27,5 +28,16 @@ struct HomeViewModel {
         }
     }
 
+    func logout() async {
+        do {
+            let response = try await service.logoutPatient()
+            if response {
+                authManager.removeToken()
+                authManager.removePatientID()
+            }
+        }catch {
+            print("Ocorreu um erro no logout: \(error)")
+        }
+    }
     
 }
