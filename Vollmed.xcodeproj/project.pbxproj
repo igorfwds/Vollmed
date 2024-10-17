@@ -32,6 +32,8 @@
 		488A6A2E2AB93514003A2CAD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A6A2D2AB93514003A2CAD /* AuthenticationManager.swift */; };
 		F9887AF62CC1A14B00D2A2C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AF52CC1A14B00D2A2C6 /* HomeViewModel.swift */; };
 		F9887AFC2CC1AF2F00D2A2C6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */; };
+		F9887AFE2CC1B10800D2A2C6 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */; };
+		F9887B002CC1B16C00D2A2C6 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,8 @@
 		488A6A2D2AB93514003A2CAD /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		F9887AF52CC1A14B00D2A2C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,8 @@
 			isa = PBXGroup;
 			children = (
 				F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */,
+				F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */,
+				F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -299,11 +305,13 @@
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				488A6A1D2AB91386003A2CAD /* CancelAppointmentView.swift in Sources */,
 				488A6A2E2AB93514003A2CAD /* AuthenticationManager.swift in Sources */,
+				F9887B002CC1B16C00D2A2C6 /* RequestError.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
 				488A6A272AB93065003A2CAD /* UserDefaultsHelper.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
 				488A6A1F2AB91FF1003A2CAD /* SignInView.swift in Sources */,
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,
+				F9887AFE2CC1B10800D2A2C6 /* RequestMethod.swift in Sources */,
 				484BEEFF2AB0F59D0033C07A /* WebService.swift in Sources */,
 				F9887AFC2CC1AF2F00D2A2C6 /* Endpoint.swift in Sources */,
 				488A6A212AB920F1003A2CAD /* SignUpView.swift in Sources */,
