@@ -30,10 +30,15 @@
 		488A6A272AB93065003A2CAD /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A6A262AB93065003A2CAD /* UserDefaultsHelper.swift */; };
 		488A6A2B2AB93472003A2CAD /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A6A2A2AB93472003A2CAD /* KeychainHelper.swift */; };
 		488A6A2E2AB93514003A2CAD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488A6A2D2AB93514003A2CAD /* AuthenticationManager.swift */; };
+		F91D42812CC2DF0000146406 /* HomeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91D42802CC2DF0000146406 /* HomeEndpoint.swift */; };
 		F9887AF62CC1A14B00D2A2C6 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AF52CC1A14B00D2A2C6 /* HomeViewModel.swift */; };
 		F9887AFC2CC1AF2F00D2A2C6 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */; };
 		F9887AFE2CC1B10800D2A2C6 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */; };
 		F9887B002CC1B16C00D2A2C6 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */; };
+		F9887B022CC1B26D00D2A2C6 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9887B012CC1B26D00D2A2C6 /* HTTPClient.swift */; };
+		F9E404A82CC6B7470017366E /* HomeNetworkingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E404A72CC6B7470017366E /* HomeNetworkingService.swift */; };
+		F9E404AA2CC6BCE80017366E /* AuthenticationEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E404A92CC6BCE80017366E /* AuthenticationEndpoint.swift */; };
+		F9E404AC2CC6BE600017366E /* AuthenticationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E404AB2CC6BE600017366E /* AuthenticationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,10 +66,15 @@
 		488A6A262AB93065003A2CAD /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		488A6A2A2AB93472003A2CAD /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		488A6A2D2AB93514003A2CAD /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		F91D42802CC2DF0000146406 /* HomeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndpoint.swift; sourceTree = "<group>"; };
 		F9887AF52CC1A14B00D2A2C6 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
 		F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		F9887B012CC1B26D00D2A2C6 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		F9E404A72CC6B7470017366E /* HomeNetworkingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkingService.swift; sourceTree = "<group>"; };
+		F9E404A92CC6BCE80017366E /* AuthenticationEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationEndpoint.swift; sourceTree = "<group>"; };
+		F9E404AB2CC6BE600017366E /* AuthenticationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +216,7 @@
 				F9887AFB2CC1AF2F00D2A2C6 /* Endpoint.swift */,
 				F9887AFD2CC1B10800D2A2C6 /* RequestMethod.swift */,
 				F9887AFF2CC1B16C00D2A2C6 /* RequestError.swift */,
+				F9887B012CC1B26D00D2A2C6 /* HTTPClient.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -213,6 +224,8 @@
 		F9887AF92CC1AEE000D2A2C6 /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
+				F91D42802CC2DF0000146406 /* HomeEndpoint.swift */,
+				F9E404A92CC6BCE80017366E /* AuthenticationEndpoint.swift */,
 			);
 			path = Endpoints;
 			sourceTree = "<group>";
@@ -220,6 +233,8 @@
 		F9887AFA2CC1AF0100D2A2C6 /* services */ = {
 			isa = PBXGroup;
 			children = (
+				F9E404A72CC6B7470017366E /* HomeNetworkingService.swift */,
+				F9E404AB2CC6BE600017366E /* AuthenticationService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -296,18 +311,23 @@
 			files = (
 				488A6A232AB92BAE003A2CAD /* Patient.swift in Sources */,
 				F9887AF62CC1A14B00D2A2C6 /* HomeViewModel.swift in Sources */,
+				F9887B022CC1B26D00D2A2C6 /* HTTPClient.swift in Sources */,
 				488A6A1B2AB90ED6003A2CAD /* Appointment.swift in Sources */,
 				488A6A132AB8FB3D003A2CAD /* Date+.swift in Sources */,
 				488A6A2B2AB93472003A2CAD /* KeychainHelper.swift in Sources */,
 				488A6A172AB8FBCE003A2CAD /* ScheduleAppointment.swift in Sources */,
 				48539DEF2AB0F47C005BD7C9 /* ContentView.swift in Sources */,
 				488A6A152AB8FB86003A2CAD /* String+.swift in Sources */,
+				F9E404AC2CC6BE600017366E /* AuthenticationService.swift in Sources */,
 				484BEF052AB0F7970033C07A /* HomeView.swift in Sources */,
 				488A6A1D2AB91386003A2CAD /* CancelAppointmentView.swift in Sources */,
 				488A6A2E2AB93514003A2CAD /* AuthenticationManager.swift in Sources */,
+				F9E404AA2CC6BCE80017366E /* AuthenticationEndpoint.swift in Sources */,
 				F9887B002CC1B16C00D2A2C6 /* RequestError.swift in Sources */,
 				484BEEFD2AB0F5750033C07A /* Specialist.swift in Sources */,
+				F91D42812CC2DF0000146406 /* HomeEndpoint.swift in Sources */,
 				488A6A272AB93065003A2CAD /* UserDefaultsHelper.swift in Sources */,
+				F9E404A82CC6B7470017366E /* HomeNetworkingService.swift in Sources */,
 				484BEF012AB0F6090033C07A /* ButtonView.swift in Sources */,
 				488A6A1F2AB91FF1003A2CAD /* SignInView.swift in Sources */,
 				484BEF032AB0F7080033C07A /* SpecialistCardView.swift in Sources */,

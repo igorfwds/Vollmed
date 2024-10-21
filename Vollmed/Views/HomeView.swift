@@ -11,7 +11,7 @@ struct HomeView: View {
     
     let service = WebService()
     
-    var viewModel = HomeViewModel()
+    var viewModel = HomeViewModel(service: HomeNetworkingService(), authService: AuthenticationService())
     
     @State private var specialists: [Specialist] = []
     
@@ -44,7 +44,7 @@ struct HomeView: View {
         .onAppear {
             Task {
                 do {
-                    let response = try await viewModel.getSpecialists()
+                    guard let response = try await viewModel.getSpecialists() else{ return}
                     self.specialists = response
                 }catch {
                     print(error.localizedDescription)
